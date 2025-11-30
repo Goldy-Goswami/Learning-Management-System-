@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign Up — TOLO</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Extra styles ONLY for signup page */
+    .signup-wrapper {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .signup-card {
+      width: 400px;
+      background: rgba(30, 30, 46, 0.6);
+      backdrop-filter: blur(14px);
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 40px rgba(0,0,0,0.4);
+      position: relative;
+      animation: fadeIn 0.7s ease;
+    }
+
+    .signup-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(137,180,250,0.18), rgba(180,190,254,0.08));
+      z-index: -1;
+    }
+
+    .signup-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+
+    .signup-sub {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+    }
+
+    .signup-card button {
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    .switch {
+      margin-top: 12px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    .switch a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="signup-wrapper">
+    <form class="signup-card" action="/post" method="post">
+
+      <div class="signup-title">Create Account</div>
+      <div class="signup-sub">Join IDK today</div>
+
+      <label>Name</label>
+      <input type="text" name="name" required placeholder="Your full name">
+
+      <label>Email</label>
+      <input type="email" name="email" required placeholder="Enter your email">
+
+      <label>Password</label>
+      <input type="password" name="password" required placeholder="Create a password">
+
+      <label>Register as</label>
+      <select name="role">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+      </select>
+
+      <button class="btn btn-main btn-login" type="submit">Sign Up</button>
+
+      <p class="switch">Already have an account? <a href="login.html">Login</a></p>
+    </form>
+  </div>
+
+</body>
+</html>

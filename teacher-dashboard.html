@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teacher Dashboard — TOLO</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="teacher.css">
+</head>
+
+
+<body>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar card">
+      <div class="profile">
+        <div class="avatar">T</div>
+        <div>
+          <div class="name">Demo Teacher</div>
+          <div class="muted">teacher@example.com</div>
+        </div>
+      </div>
+      <hr />
+      <nav class="sidemenu">
+        <a href="#courses">My Courses</a>
+        <a href="#students">Students</a>
+        <a href="#upload">Upload Material</a>
+        <a href="online-class.html">Start Live Class</a>
+        <a href="#settings">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+      <header class="main-head card">
+        <h2>Welcome, Demo Teacher</h2>
+        <div class="small-muted">Manage your courses, students, materials, and live classes</div>
+      </header>
+
+      <!-- Courses Section -->
+      <section id="courses" class="card">
+        <h3>Your Courses</h3>
+        <div class="teacher-courses">
+
+          <div class="course-list-item card">
+            <div>
+              <div class="c-title">React Deep Dive</div>
+              <div class="muted">12 students enrolled</div>
+            </div>
+            <div class="row">
+              <a class="btn ghost" href="create-course.html">Edit</a>
+              <button class="btn">Students</button>
+            </div>
+          </div>
+
+          <div class="course-list-item card">
+            <div>
+              <div class="c-title">JavaScript Masterclass</div>
+              <div class="muted">18 students enrolled</div>
+            </div>
+            <div class="row">
+              <a class="btn ghost" href="create-course.html">Edit</a>
+              <button class="btn">Students</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top:12px">
+          <a class="btn" href="create-course.html">+ Add New Course</a>
+        </div>
+      </section>
+
+      <!-- Student List -->
+      <section id="students" class="card">
+        <h3>Your Students</h3>
+        <ul class="muted">
+          <li>Student 1 — JavaScript Masterclass</li>
+          <li>Student 2 — React Deep Dive</li>
+          <li>Student 3 — UI/UX Design</li>
+        </ul>
+      </section>
+
+      <!-- Study Material Upload -->
+      <section id="upload" class="card">
+        <h3>Upload Study Material</h3>
+        <p class="muted">Upload videos, PDFs, notes, and share them with your students.</p>
+
+        <div class="upload-box">
+          <label>Select File (Video / PDF / Notes)</label>
+          <input type="file" id="fileInput" accept="video/*,.pdf,.txt,.doc,.docx">
+
+          <button class="btn" id="uploadBtn">Upload</button>
+        </div>
+
+        <h4 style="margin-top: 20px;">Uploaded Material</h4>
+        <ul id="fileList" class="upload-list"></ul>
+      </section>
+
+      <!-- Live Classes -->
+      <section class="card">
+        <h3>Live Classes</h3>
+        <div class="muted">Start new sessions for your students</div>
+        <div style="margin-top:10px">
+          <a class="btn" href="live.html" onclick="startClass()">Start Live Class</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="teacher.js"></script>
+</body>
+</html>

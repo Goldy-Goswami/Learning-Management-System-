@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — TOLO</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Extra styles ONLY for login page */
+    .login-wrapper {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .login-card {
+      width: 380px;
+      background: rgba(30, 30, 46, 0.6);
+      backdrop-filter: blur(14px);
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 40px rgba(0,0,0,0.4);
+      position: relative;
+      animation: fadeIn 0.7s ease;
+    }
+
+    .login-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(137,180,250,0.18), rgba(180,190,254,0.08));
+      z-index: -1;
+    }
+
+    .login-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+
+    .login-sub {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+    }
+
+    .login-card button {
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    .switch {
+      margin-top: 12px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    .switch a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-wrapper">
+    <form class="login-card" action="/post" method="post" id="login">
+
+      <div class="login-title">Welcome Back</div>
+      <div class="login-sub">Login to continue your learning journey</div>
+
+      <label>Email</label>
+      <input type="email" name="email" required placeholder="Enter your email">
+
+      <label>Password</label>
+      <input type="password" name="password" required placeholder="Enter your password">
+
+      <label>Select Role</label>
+      <select name="role" id ="role">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option>
+      </select>
+
+      <button type="submit" class="btn btn-main btn-login">Login</button>
+
+      <p class="switch">New here? <br> <a href="sign-up.html">Create an account</a></p>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Dashboard — TOLO</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="student.css">
+</head>
+ 
+<body>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <div class="avatar">S</div>
+        <div>
+          <div class="name" id="student-name">Student Name</div>
+          <div class="email" id="student-email">student@example.com</div>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <a href="#courses">My Courses</a>
+        <a href="#progress">Progress</a>
+        <a href="#live">Online Classes</a>
+        <a href="#assignments">Assignments</a>
+        <a href="#settings">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+      <header class="header">
+        <h2>Welcome back, <span id="header-name">Student</span></h2>
+        <p>Here is your learning summary</p>
+      </header>
+
+      <!-- COURSES -->
+      <section class="card" id="courses">
+        <h3>Your Courses</h3>
+
+        <div class="course-list">
+
+          <div class="course-card">
+            <div class="course-icon">JS</div>
+
+            <div class="course-info">
+              <div class="course-title">JavaScript Basics</div>
+              <div class="course-progress">
+                <div class="progress-bar">
+                  <div style="width: 40%"></div>
+                </div>
+                <span class="progress-value">40%</span>
+              </div>
+
+              <div class="btn-row">
+                <button class="btn">Continue</button>
+                <button class="btn buy-btn" data-course="JavaScript Basics">Buy Course</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-icon">UX</div>
+
+            <div class="course-info">
+              <div class="course-title">UI/UX Fundamentals</div>
+              <div class="course-progress">
+                <div class="progress-bar">
+                  <div style="width: 55%"></div>
+                </div>
+                <span class="progress-value">55%</span>
+              </div>
+
+              <div class="btn-row">
+                <button class="btn">Continue</button>
+                <button class="btn buy-btn" data-course="UI/UX Fundamentals">Buy Course</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PROGRESS SECTION -->
+      <section class="card" id="progress">
+        <h3>Progress Overview</h3>
+
+        <div class="stats">
+          <div class="stat-box">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Total Courses</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-value">47%</div>
+            <div class="stat-label">Average Progress</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-value">6 PM</div>
+            <div class="stat-label">Next Class</div>
+          </div>
+        </div>
+      </section>
+
+
+     <section id="live-class" class="card" style="display:none;">
+  <h3>Live Class</h3>
+  <p class="muted">A class is currently live.</p>
+
+  <button id="joinLiveBtn" 
+          style="background:red;color:white;padding:10px 20px;
+          border:none;border-radius:8px;cursor:pointer;font-size:16px;">
+    🔴 Join Live Class
+  </button>
+</section>
+
+
+      <!-- ASSIGNMENTS -->
+      <section class="card" id="assignments">
+        <h3>Assignments</h3>
+        <p>No pending assignments.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- =====================
+       QR PAYMENT POPUP
+  ====================== -->
+  <div id="qrModal" class="qr-modal">
+    <div class="qr-box">
+      <h3>BUY THIS COURSE </h3>
+      <p id="qrCourseName"></p>
+
+      <img id="qrImage" src="/QR.jpeg" alt="QR Code">
+
+      <button class="close-btn" onclick="closeQR()">Close</button>
+    </div>
+  </div>
+
+  <script src="student.js"></script>
+</body>
+</html>
